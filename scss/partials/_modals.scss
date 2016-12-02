@@ -1,0 +1,91 @@
+.modal-open{
+	padding-right: 0!important;
+}
+
+.modal-backdrop {
+   background-color: shade($primary-color,90%);
+}
+
+.modal-backdrop.in {
+    opacity: 0.9;
+}
+
+
+.modal-header{
+	border-bottom:none;
+	padding-bottom: 0;
+	.close{
+		font-size: 34px;
+		color:$body-text-color;
+		opacity: .6;
+		position: relative;
+		right:10px;
+	}
+}
+
+.modal-body{
+	padding-top: 0;
+}
+
+//subscribe modal
+
+
+.subscribe-modal{
+	display: none;
+	button{
+		&:focus{
+			outline:none;
+		}
+	}
+	h3{
+		margin-bottom: $baseline/2;
+		color:shade($primary-color, 50%);
+		font-family: $light-font-name;
+	}
+	p{
+		margin-top: 0;
+		font-size: 1em;
+		line-height: 1.8em;
+	}
+	.modal-dialog{
+		max-width: 420px;
+		border:none;
+		margin:0 auto;
+	}
+	form.subscribe{
+		width: 310px;
+		margin: 0 auto;
+		input{
+			padding: 24px $baseline/2;
+		}
+		.btn{
+			margin-bottom: $baseline/2;
+			&.btn-primary{
+				padding: 24px 0;
+				background: $secondary-color;
+				text-transform: uppercase;
+				letter-spacing: .9px;
+				line-height: 0;
+				font-size: 1em;
+				font-family: 'brandon_grotesquebold';
+			}
+		}
+	}
+	@include breakpoint(sm) {
+		form.subscribe{
+			width: auto;
+		}
+	}
+}
+
+///custombox
+
+.custombox-modal-container{
+	margin-top: 40px!important;
+}
+
+
+.custombox-open, .custombox-open body{
+	padding-right: 0!important;
+	overflow: visible;
+}

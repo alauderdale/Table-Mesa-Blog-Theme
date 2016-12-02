@@ -1,0 +1,51 @@
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+  select,
+  textarea,
+  input {
+    font-size: 16px!important;
+  }
+
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 16px!important;
+  }
+}
+
+
+label{
+	font-size:1.3rem;
+	font-family:$light-font-name;
+	color:$text-color;
+	margin-bottom:10px;
+}
+
+input{
+	-webkit-appearance: none;
+}
+
+.input-lg{
+	border-radius:3px;
+}
+
+.form-control{
+	box-shadow:none;
+	&:focus{
+		box-shadow:none;
+	}
+}
+
+
+.input-group-addon{
+	background: none;
+	border-right:none;
+	padding-right: 0;
+	// border-color:$primary-color;
+	i{
+		font-size: 15px;
+		position: relative;
+		top:2px;
+	}
+}

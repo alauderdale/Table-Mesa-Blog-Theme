@@ -1,0 +1,10 @@
+/* Here's the new CSS to add... */
+.customize-support .global-nav {
+  top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+  .customize-support .global-nav  {
+    top: 46px;
+  }
+}
