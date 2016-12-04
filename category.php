@@ -18,18 +18,15 @@
     <div class='row'>
       <div class='col-lg-12'>
         <div class='row row-centered'>
-					<!-- Start the Loop. -->
-					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-						<?php get_template_part( 'post', 'thumbnail' ); ?>
-						 	<!-- Stop The Loop (but note the "else:" - see next line). -->
-						 <?php endwhile; else : ?>
-							<div class='col-md-12'>
-							 	<!-- The very first "if" tested to see if there were any Posts to -->
-							 	<!-- display.  This "else" part tells what do if there weren't any. -->
-							 	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-						 </div>
-					 	<!-- REALLY stop The Loop. -->
-					<?php endif; ?>
+         	<?php if ( have_posts() ) : ?>
+	          <?php 
+							$cat = get_query_var('cat');
+							$category = get_category ($cat);
+							echo do_shortcode('[ajax_load_more seo="true" preloaded_amount="3" preloaded="true" posts_per_page="6" container_type="div" transition="fade"  category="'.$category->slug.'"]');
+						?>
+          <?php else : ?>
+          		<p class="text-center">We didn't find anything. Please try again.</p>
+          <?php endif; ?> 
         </div>
       </div>
     </div>

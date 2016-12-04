@@ -27,13 +27,11 @@ $total_results = $wp_query->found_posts;
           <?php printf('We found <span class="dark-text-color">' . $total_results . '</span> results with the word <span class="dark-text-color">' . get_search_query() . '</span> in it' ); ?>
         </h3>
         <div class='row row-centered'>
-        	<?php if ( have_posts() ) : ?>
-        		<?php while ( have_posts() ) : the_post(); ?>
-          		<?php get_template_part( 'post', 'thumbnail' ); ?>
-          	<?php endwhile; ?>
+         	<?php if ( have_posts() ) : ?>
+              <?php echo do_shortcode('[ajax_load_more id="8453795663" max_pages="0"  container_type="div" preloaded_amount="3" preloaded="true"  posts_per_page="6" post_format="standard" transition="fade" search="'.$s.'"]'); ?>
           	<?php else : ?>
           		<p class="text-center">We didn't find anything. Please try again.</p>
-          <?php endif; ?>
+          <?php endif; ?> 
         </div>
       </div>
     </div>

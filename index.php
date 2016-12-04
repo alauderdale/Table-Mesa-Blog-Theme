@@ -23,7 +23,7 @@ get_header(); ?>
 </style>
 
 <div class='featured-post-wrap'>
-	<?php $the_query = new WP_Query('showposts=1'); ?>
+	<?php $the_query = new WP_Query(array('showposts' => '1', 'category_name' => 'featured' )); ?>
   <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
 	  <section class='homeSlide no-padding' id='featured-post-hero'>
 	  	<?php if (has_post_thumbnail( $post->ID ) ): ?>
@@ -70,22 +70,14 @@ get_header(); ?>
     <div class='row'>
       <div class='col-lg-12'>
         <div class='row row-centered'>
-					<!-- Start the Loop. -->
-					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-						<?php get_template_part( 'post', 'thumbnail' ); ?>
-						 	<!-- Stop The Loop (but note the "else:" - see next line). -->
-						 <?php endwhile; else : ?>
-							<div class='col-md-12'>
-							 	<!-- The very first "if" tested to see if there were any Posts to -->
-							 	<!-- display.  This "else" part tells what do if there weren't any. -->
-							 	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-						 </div>
-					 	<!-- REALLY stop The Loop. -->
-					<?php endif; ?>
+         	<?php if ( have_posts() ) : ?>
+	          <?php echo do_shortcode('[ajax_load_more id="8453795663" container_type="div"  preloaded_amount="3" preloaded="true"  posts_per_page="6" post_format="standard" transition="fade"]'); ?>
+          <?php else : ?>
+          		<p class="text-center">No posts yet</p>
+          <?php endif; ?> 
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <?php get_footer(); ?>

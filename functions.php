@@ -253,3 +253,15 @@ function wpdocs_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
 
+/**
+ * Only search posts
+ */
+
+function SearchFilter($query) {
+if ($query->is_search) {
+$query->set('post_type', 'post');
+}
+return $query;
+}
+
+add_filter('pre_get_posts','SearchFilter');

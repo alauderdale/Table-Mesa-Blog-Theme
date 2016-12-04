@@ -32,6 +32,9 @@
 
 .subscribe-modal{
 	display: none;
+	.ssba{
+		display: none!important;
+	}
 	button{
 		&:focus{
 			outline:none;
@@ -51,12 +54,22 @@
 		max-width: 420px;
 		border:none;
 		margin:0 auto;
+		.modal-content{
+			background: #EFF8FF;
+		}
 	}
 	.subscribe{
 		max-width: 310px;
 		margin: 0 auto;
 		input{
-			padding: 24px $baseline/2;
+			// padding: 24px $baseline/2;
+			height: 50px;
+		}
+		.form-control{
+			border-color:#ACC1D3;
+			&:focus{
+				border-color: $primary-color;
+			}
 		}
 		.btn{
 			margin-bottom: $baseline/2;
