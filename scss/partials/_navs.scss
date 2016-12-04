@@ -38,7 +38,7 @@ ul.pager{
 				line-height: 30px;
 			}
 			margin: 0 10px;
-			&.active{
+			&.active, &.current-cat {
 				font-family: $medium-font-name;
 				a{
 					color: black;

@@ -27,9 +27,11 @@ section{
     border-bottom:1px solid $divider-color;
     background-size: cover;
     background: #FDFFFF url("../images/default_header_bg.png");
+    padding: $baseline*3 0;
     h2{
       font-family: $bold-font-name;
       margin: 0;
+      font-size: 2.5em;
     }
   }
 }
@@ -48,13 +50,6 @@ section{
   }
 }
 
-// .featured-hero{
-//     @extend %white_text;
-//     background-color:$primary-color;
-//     background:url(../images/tmp/bq3p98-j__e-jordan-whitt.jpg); 
-//     background-size:cover; 
-//     background-attachment:fixed;
-// }
 
 
 #featured-post-hero{
@@ -101,9 +96,10 @@ section{
 
 }
 .bcg {
-    background-position: center center;
-    background-repeat: no-repeat;
+    // background-position: center center;
+    // background-repeat: no-repeat;
     background-attachment: fixed;
+    @include linear-gradient(45deg, #007FF3 0%,#00ABFF 100%);
     opacity:0;
     @include transition(opacity .25s);
 

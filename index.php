@@ -13,36 +13,67 @@
 
 get_header(); ?>
 
+<!-- hide the back button -->
+<style type="text/css">
+
+.main-nav-back{
+	display:none!important;
+}
+
+</style>
+
+<div class='featured-post-wrap'>
+	<?php $the_query = new WP_Query('showposts=1'); ?>
+  <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+	  <section class='homeSlide no-padding' id='featured-post-hero'>
+	  	<?php if (has_post_thumbnail( $post->ID ) ): ?>
+	  	<?php $imageFull = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+	    	<div class='bcg' data-anchor-target='#featured-post-hero' data-center='background-position: 50% 0px;' data-top-bottom='background-position: 50% -100px; ' style='background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(<?php echo $imageFull[0]; ?>)'>
+	    <?php else : ?>
+	    	<div class='bcg' data-anchor-target='#featured-post-hero' data-center='background-position: 50% 0px;' data-top-bottom='background-position: 50% -100px; '>
+	    <?php endif; ?>
+	      <div class='hsContainer'>
+	        <div class='hsContent' data--100-center='opacity: 1; top:0%;' data--250-top='opacity: 0; top:40%;' data-anchor-target='#featured-post-hero h5'>
+	          <div class='row'>
+	            <div class='col-sm-2'></div>
+	            <div class='col-sm-8'>
+	              <h5 class='half-margin-bottom text-center'>
+	                <?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?>
+	              </h5>
+	              <h1 class='text-center medium-font-name no-margin-top half margin-bottom'>
+	                <a href='<?php the_permalink(); ?>'>
+	                  <?php the_title(); ?>
+	                </a>
+	              </h1>
+	              <a class='btn btn-wire' href='<?php the_permalink(); ?>'>
+	                Read now
+	              </a>
+	              <!-- %p.text-center -->
+	              <!-- By Table Mesa on Jan 1 2017 -->
+	            </div>
+	            <div class='col-sm-2'></div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </section>
+  <?php endwhile; ?>
+</div>
+
+<?php get_template_part( 'topics', 'bar' ); ?>
+
+
+
 
 <section>
   <div class='container'>
     <div class='row'>
       <div class='col-lg-12'>
-        <div class='row'>
+        <div class='row row-centered'>
 					<!-- Start the Loop. -->
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	          <div class='col-md-4 col-sm-6'>
-	            <a class='post-thumbnail' href=' <?php the_permalink(); ?>'>
-	              <div class='post-thumbnail-body'>
-	                <h3>
-	                  <?php the_title(); ?>
-	                </h3>
-	                <p>
-	                  Est nulla perspiciatis perferendis inventore molestiae voluptas necessitatibus debitis natus enim soluta dolorum. Repellendus aliquid illo ea consequatur nam voluptas atque nulla animi. Quo vitae saepe consequatur vero minima sed reiciendis. Assumenda accusamus iure omnis facere quidem aut eligendi ab cupiditate eius sapiente ex libero. Porro aut doloribus iste ea dolores
-	                </p>
-	              </div>
-	              <div class='post-thumbnail-footer'>
-	                <h5 class='pull-left'>
-	                  Jan 1 2016
-	                </h5>
-	                <h5 class='text-right pull-right'>
-	                  Continued CE
-	                </h5>
-	              </div>
-	            </a>
-	          </div>
+						<?php get_template_part( 'post', 'thumbnail' ); ?>
 						 	<!-- Stop The Loop (but note the "else:" - see next line). -->
-
 						 <?php endwhile; else : ?>
 							<div class='col-md-12'>
 							 	<!-- The very first "if" tested to see if there were any Posts to -->
@@ -56,14 +87,5 @@ get_header(); ?>
     </div>
   </div>
 </section>
-
-
-
-
- 
-
-
-
-
 
 <?php get_footer(); ?>

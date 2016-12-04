@@ -54,7 +54,7 @@
 			float: left;
 			i{
 				position: relative;
-				top:-2px;
+				top:0px;
 				right:4px;
 				font-size: 14pt;
 				color: #B0B9C0;
@@ -63,7 +63,7 @@
 				color:$body-text-color;
 				font-family: $regular-font-name;
 				position: relative;
-				top:-6px;
+				top:-4px;
 				letter-spacing: -.2px;
 				font-size: 1em;
 			}
@@ -131,7 +131,7 @@
 	a.navbar-brand{
 		position: relative;
 		padding-right: 20px;
-		padding-top: 13px;
+		padding-top: 16px;
 		@include breakpoint(sm) {
 			padding-top: 16px;
 		}

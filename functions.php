@@ -32,7 +32,10 @@ function boiler_setup() {
 	 */
 	register_nav_menus( array(
 		'menu-primary' => __( 'Primary Menu', 'boiler' ),
-		'menu-contact' => __( 'Contact Menu', 'boiler' )
+		'menu-footer-tm' => __( 'Footer Table Mesa', 'boiler' ),
+		'menu-footer-professions' => __( 'Footer professions', 'boiler' ),
+		'menu-footer-provider' => __( 'Footer provider', 'boiler' ),
+		'menu-footer-social' => __( 'Footer social', 'boiler' ),
 	) );
 
 	/**
@@ -233,4 +236,20 @@ function my_post_queries( $query ) {
   }
 }
 add_action( 'pre_get_posts', 'my_post_queries' );
+
+
+/**
+ * Filter the except length to 20 characters.
+ */
+function wpdocs_custom_excerpt_length( $length ) {
+    return 40;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+
+function wpdocs_excerpt_more( $more ) {
+    return '...';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
 

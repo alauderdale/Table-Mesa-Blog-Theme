@@ -49,3 +49,19 @@ input{
 		top:2px;
 	}
 }
+
+
+//mailchimp submit
+
+
+.mc4wp-alert{
+	p{
+		font-size: .9em;
+		margin-bottom: 0;
+	}
+	&.mc4wp-success{
+		p{
+			color:green;
+		}
+	}
+}

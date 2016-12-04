@@ -52,8 +52,8 @@
 		border:none;
 		margin:0 auto;
 	}
-	form.subscribe{
-		width: 310px;
+	.subscribe{
+		max-width: 310px;
 		margin: 0 auto;
 		input{
 			padding: 24px $baseline/2;

@@ -14,29 +14,27 @@ $card-padding: 30px;
 // }
 
 a.post-thumbnail{
+	width: 100%;
 	background: white;
 	display: inline-block;
 	margin-bottom: $baseline;
 	box-shadow: 0 12px 24px 0 rgba(113,202,255,0.06), 0 12px 24px 0 rgba(0,0,0,0.11);
 	height: 430px;
 	position: relative;
-	@include transition-duration(.2s);
-
+	// @include transition-duration(.2s);
+	top: 0px;
+	@include transition(top .2s);
   margin-left: 2px;
   margin-right: 2px;
 
-
   @include breakpoint(sm) {
     height: auto!important;
-    margin-left: 20px;
-    margin-right: 20px;
   }
 
 	&:hover{
-
 		box-shadow: 0 12px 24px 0 rgba(113,202,255,0.06), 0 17px 29px 0 rgba(0,0,0,0.11), inset 1px 1px 0 $primary-color, inset -1px -1px 0 $primary-color;
-		margin-top:-4px;
-		margin-bottom: 4px +$baseline;
+		top:-4px;
+		// margin-bottom: 4px +$baseline;
 		.post-thumbnail-footer{
 			box-shadow:  inset 1px 0px 0 $primary-color, inset -1px -1px 0 $primary-color;
 		}
@@ -56,7 +54,7 @@ a.post-thumbnail{
 	}
 
 	.post-thumbnail-footer{
-		@include transition-duration(.2s);
+		// @include transition-duration(.2s);
 		padding:$card-padding;
 		background-color: $light-gray-color;
 		display: inline-block;
@@ -88,10 +86,6 @@ a.post-thumbnail{
 		overflow: hidden;
 		text-overflow: ellipsis;
 		height: 185px;
-		&.has-image{
-			margin-bottom: $card-line-height/4;
-			height: 85px;
-		}
 	  @include breakpoint(sm) {
 	    height: auto!important;
 	    margin-bottom:$baseline*2.5;
@@ -100,6 +94,14 @@ a.post-thumbnail{
 	    }
 	  }
 	}
+
+	.has-image{
+		p{
+			margin-bottom: $card-line-height/4;
+			height: 85px;	
+		}
+	}
+
 	.img-clip{
 		img{
 			width: 100%;
@@ -129,11 +131,37 @@ a.post-thumbnail{
 	background: white;
 	img{
 		max-width:100%;
-		margin: 10px 0;
+		margin: 15px;
 	}
 	@include breakpoint(sm) {
 		ul{
 			margin-left: 20px;
 		}
+	}
+}
+
+.post img{
+	margin: 0!important;
+}
+
+.ssba-wrap{
+	&:last-of-type{
+		padding-top: 30px;
+	}
+}
+
+
+.ssba_sharecount{
+	border:none!important;
+	background: none!important;
+	color: $primary-color;
+	position: relative;
+	margin-right: 4px!important;
+	right:7px;
+	font-size: .7em!important;
+	color: $primary-color!important;
+	&:before , &:after{
+		border:none!important;
+		background: none!important;
 	}
 }

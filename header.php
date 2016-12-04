@@ -29,7 +29,7 @@
   <nav class='navbar navbar-default navbar-fixed-top global-nav'>
     <div class='container relative'>
       <div class='visible-xs main-nav-back'>
-        <a href='/contact'>
+        <a href='<?php bloginfo('url')?>'>
           <i class='material-icons'>
             arrow_back
           </i>
@@ -39,7 +39,7 @@
         <div class='logo-and-breadcrumbs'>
           <div class='header-promo'>
             <form class='navbar-form'>
-              <a class='btn btn-primary' href='/demo'>
+              <a class='btn btn-primary' href='https://www.mytablemesa.com/'>
                 Learn more about Table Mesa
               </a>
             </form>
@@ -48,21 +48,14 @@
             <a class='navbar-brand' href='<?php bloginfo('url')?>'>
               <img src='<?php bloginfo('template_url'); ?>/images/logo@2x.png' width='148px'>
             </a>
-            <div class='nav nav-breadcrumb hidden-xs'>
-              <i class='material-icons'>
-                chevron_right
-              </i>
-
-            <?php
-                // Get the ID of a given category TODO
-                $category_id = get_cat_ID( 'cool' );
-
-            ?>
-
-              <a href='<?php get_category_link( $category_id ); ?>'>
-                <?php single_cat_title();?>
-              </a>
-            </div>
+            <?php if ( is_category() || is_single() ): ?>
+              <div class='nav nav-breadcrumb hidden-xs'>
+                <i class='material-icons'>
+                  chevron_right
+                </i>
+                <?php the_category( ' '); ?>
+              </div>
+            <?php endif; ?>
           </div>
         </div>
         <div class='visible-xs'>
@@ -77,7 +70,7 @@
                           search
                         </i>
                       </div>
-                      <input class='form-control navbar-search-form' placeholder='search the blog'>
+                     <?php get_template_part( 'mobile', 'searchform' ); ?>
                     </div>
                   </div>
                 </form>
@@ -113,7 +106,7 @@
                 </ul>
               </div>
               <div class='mobile-menu-footer'>
-                <a class='btn btn-primary btn-block' href='#'>
+                <a class='btn btn-primary btn-block' href='https://www.mytablemesa.com/'>
                   Learn more about Table Mesa
                 </a>
               </div>
@@ -149,17 +142,13 @@
                   Subscribe
                 </a>
               </li>
-              <li>
+              <li class="desktop-searchbar">
                 <a class='pull-left search-toggle' href='#' onclick='return false;'>
                   <i class='material-icons'>
                     search
                   </i>
                 </a>
-                <form class='navbar-form pull-left navbar-search'>
-                  <div class='form-group'>
-                    <input class='form-control navbar-search-form' placeholder='search the blog'>
-                  </div>
-                </form>
+                <?php get_search_form( ); ?>
               </li>
             </ul>
           </div>
@@ -167,3 +156,4 @@
       </div>
     </div>
   </nav>
+  <div id='skrollr-body'>
