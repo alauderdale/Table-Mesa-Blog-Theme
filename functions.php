@@ -144,9 +144,9 @@ function boiler_scripts_styles() {
 
 	wp_enqueue_script( 'custombox', get_template_directory_uri() . '/js/vendor/custombox.js', '20120206', true );
 
-	wp_enqueue_script( 'skrollr', get_template_directory_uri() . '/js/vendor/skrollr.js', '20120206', true );
-
 	wp_enqueue_script( 'menu_button', get_template_directory_uri() . '/js/vendor/menu_button.js', '20120206', true );
+
+	wp_enqueue_script( 'rellax', get_template_directory_uri() . '/js/vendor/rellax.js', '20120206', true );
 
 	wp_enqueue_script( 'boiler-plugins', get_template_directory_uri() . '/js/plugins.js', array(), '20120206', true );
 

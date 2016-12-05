@@ -22,7 +22,7 @@
 	          <?php 
 							$cat = get_query_var('cat');
 							$category = get_category ($cat);
-							echo do_shortcode('[ajax_load_more seo="true" preloaded_amount="3" preloaded="true" posts_per_page="6" container_type="div" transition="fade"  category="'.$category->slug.'"]');
+							echo do_shortcode('[ajax_load_more seo="true" preloaded_amount="6" preloaded="true" posts_per_page="6" container_type="div" transition="fade"  category="'.$category->slug.'"]');
 						?>
           <?php else : ?>
           		<p class="text-center">We didn't find anything. Please try again.</p>

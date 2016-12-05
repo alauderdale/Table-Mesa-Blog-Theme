@@ -28,7 +28,7 @@ $total_results = $wp_query->found_posts;
         </h3>
         <div class='row row-centered'>
          	<?php if ( have_posts() ) : ?>
-              <?php echo do_shortcode('[ajax_load_more id="8453795663" max_pages="0"  container_type="div" preloaded_amount="3" preloaded="true"  posts_per_page="6" post_format="standard" transition="fade" search="'.$s.'"]'); ?>
+              <?php echo do_shortcode('[ajax_load_more id="8453795663" max_pages="0"  container_type="div" preloaded_amount="6" preloaded="true"  posts_per_page="6" post_format="standard" transition="fade" search="'.$s.'"]'); ?>
           	<?php else : ?>
           		<p class="text-center">We didn't find anything. Please try again.</p>
           <?php endif; ?> 

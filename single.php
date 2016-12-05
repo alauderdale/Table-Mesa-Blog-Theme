@@ -9,19 +9,15 @@ get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
+
 <div class='featured-post-wrap'>
   <section class='homeSlide no-padding' id='featured-post-hero'>
-  	<?php if (has_post_thumbnail( $post->ID ) ): ?>
-  	<?php $imageFull = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-    	<div class='bcg' data-anchor-target='#featured-post-hero' data-center='background-position: 50% 0px;' data-top-bottom='background-position: 50% -100px; ' style='background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(<?php echo $imageFull[0]; ?>)'>
-    <?php else : ?>
-    	<div class='bcg' data-anchor-target='#featured-post-hero' data-center='background-position: 50% 0px;' data-top-bottom='background-position: 50% -100px; '>
-    <?php endif; ?>
-      <div class='hsContainer'>
-        <div class='hsContent' data--100-center='opacity: 1; top:0%;' data--250-top='opacity: 0; top:40%;' data-anchor-target='#featured-post-hero h5'>
-          <div class='row'>
-            <div class='col-sm-2'></div>
-            <div class='col-sm-8'>
+    <div class='featured-post-container'>
+      <div class='featured-post-content rellax' data-rellax-speed="-6">
+        <div class='row'>
+          <div class='col-sm-2'></div>
+          <div class='col-sm-8'>
+            <div class="featured-post-content-container">
               <h5 class='half-margin-bottom text-center'>
                 <?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?>
               </h5>
@@ -33,14 +29,29 @@ get_header(); ?>
               <p class='text-center'>
                  By <?php the_author(); ?> on <?php the_date('M d Y'); ?>
               </p>
-              <!-- %p.text-center -->
-              <!-- By Table Mesa on Jan 1 2017 -->
             </div>
-            <div class='col-sm-2'></div>
+          </div>
+          <div class='col-sm-2'></div>
+        </div>
+      </div> <!-- end featured post content -->
+      <?php if (has_post_thumbnail( $post->ID ) ): ?>
+      <?php $imageFull = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+        <div class="featured-post-background-container rellax" >
+          <div class="featured-post-background" >
           </div>
         </div>
-      </div>
-    </div>
+        <style type="text/css">
+        .loaded{
+          background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(<?php echo $imageFull[0]; ?>);
+        }
+        </style>
+      <?php else : ?>
+        <div class="featured-post-background-container" >
+          <div class="featured-post-background">
+          </div>
+        </div>
+      <?php endif; ?>
+    </div> <!-- end featured post container -->
   </section>
 </div>
 
