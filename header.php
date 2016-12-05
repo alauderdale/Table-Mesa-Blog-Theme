@@ -25,7 +25,7 @@
 <?php wp_head(); ?>
 
 
-<body class='index'>
+<body class='index' style="height:100%!important;">
   <nav class='navbar navbar-default navbar-fixed-top global-nav'>
     <div class='container relative'>
       <div class='visible-xs main-nav-back'>
