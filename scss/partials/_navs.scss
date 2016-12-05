@@ -34,10 +34,11 @@ ul.pager{
 		padding: 0 10px;
 		width: 100%;
 		li{
+			font-size: .75em;
+			margin: 0 10px;
 			@include breakpoint(sm) {
 				line-height: 30px;
 			}
-			margin: 0 10px;
 			&.active, &.current-cat {
 				font-family: $medium-font-name;
 				a{
@@ -45,7 +46,6 @@ ul.pager{
 				}
 			}
 			a{
-				font-size: .8em;
 				color: shade($light-text-color, 50%);
 				&:hover{
 					color: $primary-color;

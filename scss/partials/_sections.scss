@@ -1,6 +1,12 @@
 //sections
 section{
   padding:$baseline*2 0;
+  &.post-grid{
+    padding:$baseline*1.5 0;
+    @include breakpoint(sm) {
+      padding: 20px 0;
+    }
+  }
 
   &.page-header-section{
     background-size:cover;
@@ -124,7 +130,7 @@ section{
     @include linear-gradient(45deg, #007FF3 0%,#00ABFF 100%);
     opacity:0;
     @include transition(opacity .25s);
-    background-size:cover;
+    background-size:cover!important;
     &.loaded{
       opacity: 1;
     }

@@ -44,13 +44,17 @@ a.post-thumbnail{
 				box-shadow:  none;
 			}
 	  }
+	  h3{
+	  	color:shade($primary-color,30%)!important;
+	  	@include breakpoint(sm) {
+	  		color: $text-color!important;
+	  	}
+	  }
 	}
 	.post-thumbnail-body{
 		padding: $card-padding;
 		padding-top: 40px;
-		h3{
-			color: $text-color;
-		}
+
 	}
 
 	.post-thumbnail-footer{
@@ -80,6 +84,9 @@ a.post-thumbnail{
 		font-size: 19px;
 		font-family: $medium-font-name;
 		letter-spacing: -.3px;
+		@include transition-duration(.2s);
+		color: $text-color;
+
 	}
 	p{
 		margin: 0;

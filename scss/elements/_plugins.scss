@@ -2,3 +2,11 @@
 	background-image: url('../images/infinate_loader.gif');
 	background-size:40px 40px; 
 }
+
+.alm-btn-wrap{
+	padding: 0;
+}
+
+.ajax-load-more-wrap.infinite button.alm-load-more-btn.done{
+	height: 0;
+}

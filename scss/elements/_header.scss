@@ -125,6 +125,10 @@
 				position: relative;
 				top:27px;
 				z-index: 0;
+				i{
+					&.home{
+					}
+				}
 			}
 		}
 
@@ -148,8 +152,8 @@
 			a{
 				padding-top: 14px;
     		padding-bottom: 8px;
-				padding-right:24px;
-				padding-left:25px;
+				padding-right:23px;
+				padding-left:23px;
 				color:$text-color!important;
 				@include transition-duration(.1s);
 			  &:hover{
@@ -242,6 +246,10 @@
 		.btn{
 			padding: 12px;
 			margin: 0;
+			background: white;
+			border:1px solid $primary-color;
+			color: $primary-color;
+			font-family: $light-font-name;
 		}
 	}
 	.mobile-menu-body{
@@ -281,7 +289,9 @@
 			right:12px;
 			// border-bottom:1px solid $primary-color;
 			.input-group-addon{
-						
+				// border:none;
+				// border-bottom: 1px solid shade($divider-color,10%);
+				// border-radius: 0px;
 			}
 			input{
 				width: 106%;
@@ -289,6 +299,9 @@
 				box-shadow: none!important;
 				fpnt-size:10px;
 				font-family: $light-font-name;
+				// border:none;
+				// border-bottom: 1px solid shade($divider-color,10%);
+				// border-radius: 0px;
 				&:focus{
 					border-color:#ccc;
 				}

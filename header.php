@@ -33,6 +33,9 @@
           <i class='material-icons'>
             arrow_back
           </i>
+          <i class='material-icons home' style="color:#bbb!important;">
+            home
+          </i>
         </a>
       </div>
       <div class='navbar-header'>
