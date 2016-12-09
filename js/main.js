@@ -2,6 +2,10 @@ $(document).ready(function(){
     //menu
     $('.menu-button').click(function() {
         $('#collapse-menu').toggleClass('menu-on'); 
+
+        $(".logo-and-breadcrumbs").removeClass("scrolled");
+
+
     });
 
     //search
@@ -32,6 +36,7 @@ $(document).ready(function(){
         });
     });
 
+
     //add button to header on page scroll
     $(window).scroll(function() {    
         var scroll = $(window).scrollTop();
@@ -40,10 +45,15 @@ $(document).ready(function(){
         if (scroll >= 500) {
             //clearHeader, not clearheader - caps H
             $(".logo-and-breadcrumbs").addClass("scrolled");
-        } else {
+        }  
+
+        else {
             $(".logo-and-breadcrumbs").removeClass("scrolled");
         }
+
     });
+
+
 
     //load rellax scrolling
     var rellax = new Rellax('.rellax');
